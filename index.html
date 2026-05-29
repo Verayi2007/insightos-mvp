@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InsightOS MVP</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="InsightOS navigation">
+        <div class="brand">
+          <div class="brand-mark">IO</div>
+          <div>
+            <p class="eyebrow">InsightOS</p>
+            <h1>商业认知驾驶舱</h1>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-button active" data-view="today" type="button">今日消化</button>
+          <button class="nav-button" data-view="articles" type="button">文章卡片</button>
+          <button class="nav-button" data-view="graph" type="button">主题图谱</button>
+          <button class="nav-button" data-view="review" type="button">每周复盘</button>
+        </nav>
+        <section class="sync-panel">
+          <span class="status-dot"></span>
+          <div>
+            <strong>本地优先</strong>
+            <p>连接你自己的 IMA 知识库</p>
+          </div>
+        </section>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">MVP snapshot · 2026-05-29</p>
+            <h2 id="view-title">今日消化</h2>
+          </div>
+          <div class="toolbar">
+            <label class="search">
+              <span>搜索</span>
+              <input id="search-input" type="search" placeholder="公司、主题、文章" />
+            </label>
+            <button class="primary-action" id="generate-review" type="button">生成复盘</button>
+          </div>
+        </header>
+
+        <section class="view view-active" id="today-view">
+          <div class="metrics" id="metrics"></div>
+          <div class="today-grid">
+            <section class="panel main-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Today focus</p>
+                <h3>新增洞察</h3>
+              </div>
+              <div id="insight-list" class="insight-list"></div>
+            </section>
+            <section class="panel">
+              <div class="section-heading">
+                <p class="eyebrow">Practice</p>
+                <h3>今日 3 问</h3>
+              </div>
+              <ol id="daily-questions" class="question-list"></ol>
+            </section>
+          </div>
+          <section class="panel">
+            <div class="section-heading">
+              <p class="eyebrow">Recent cards</p>
+              <h3>最近处理样本</h3>
+            </div>
+            <div id="recent-articles" class="article-strip"></div>
+          </section>
+        </section>
+
+        <section class="view" id="articles-view">
+          <div class="split-layout">
+            <section class="panel">
+              <div class="section-heading">
+                <p class="eyebrow">Knowledge cards</p>
+                <h3>文章卡片</h3>
+              </div>
+              <div class="filter-row" id="theme-filters"></div>
+              <div id="article-list" class="article-list"></div>
+            </section>
+            <aside class="panel detail-panel" id="article-detail"></aside>
+          </div>
+        </section>
+
+        <section class="view" id="graph-view">
+          <div class="graph-layout">
+            <section class="panel graph-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Entity + theme</p>
+                <h3>分层知识图谱</h3>
+              </div>
+              <svg id="knowledge-graph" viewBox="0 0 920 520" role="img" aria-label="InsightOS knowledge graph"></svg>
+            </section>
+            <aside class="panel detail-panel" id="node-detail"></aside>
+          </div>
+        </section>
+
+        <section class="view" id="review-view">
+          <div class="review-layout">
+            <section class="panel main-panel">
+              <div class="section-heading">
+                <p class="eyebrow">Weekly review</p>
+                <h3>商业认知周报</h3>
+              </div>
+              <div id="weekly-review"></div>
+            </section>
+            <section class="panel">
+              <div class="section-heading">
+                <p class="eyebrow">Decision bank</p>
+                <h3>决策问题库</h3>
+              </div>
+              <div id="decision-bank" class="decision-bank"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./data/sample.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
