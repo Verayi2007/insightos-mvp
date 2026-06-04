@@ -215,7 +215,8 @@ button {
 .panel,
 .article-card,
 .mini-article,
-.decision-item {
+.decision-item,
+.catalog-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface);
@@ -285,7 +286,9 @@ button {
 .insight-list,
 .article-list,
 .decision-bank,
-.node-articles {
+.node-articles,
+.catalog-list,
+.linked-articles {
   display: grid;
   gap: 12px;
 }
@@ -365,19 +368,22 @@ button {
   text-align: left;
 }
 
-.article-card-active {
+.article-card-active,
+.catalog-card-active {
   border-color: var(--teal);
   box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
 }
 
-.article-card strong {
+.article-card strong,
+.catalog-card strong {
   display: block;
   margin: 8px 0;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.article-card p {
+.article-card p,
+.catalog-card p {
   margin: 0 0 12px;
   color: #334155;
   line-height: 1.65;
@@ -422,6 +428,78 @@ button {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 12px;
+}
+
+.catalog-card {
+  display: block;
+  width: 100%;
+  min-height: 138px;
+  padding: 16px;
+  text-align: left;
+}
+
+.count-pill {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #eef6ff;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.evidence-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.evidence-list span {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: var(--surface-soft);
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.compact-list {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+
+.compact-list li {
+  line-height: 1.6;
+}
+
+.linked-articles button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-soft);
+  text-align: left;
+}
+
+.linked-articles strong,
+.linked-articles span {
+  display: block;
+}
+
+.linked-articles span {
+  margin-top: 8px;
+  color: #475569;
+  line-height: 1.55;
 }
 
 .graph-panel {
